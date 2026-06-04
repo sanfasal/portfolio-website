@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import Button from "./Button";
@@ -17,7 +16,6 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
 
-  // Detect active section while scrolling
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150;
@@ -40,8 +38,6 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Run once on page load
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -51,6 +47,13 @@ export default function Navbar() {
     setActiveMenu(path);
     setIsOpen(false);
   };
+
+  const menuClass = (path: string) =>
+    `relative inline-block group pb-2 transition-colors ${
+      activeMenu === path
+        ? "text-primary"
+        : "text-gray-300 hover:text-primary"
+    }`;
 
   return (
     <nav className="sticky top-0 z-50 bg-black/95 text-white px-6 md:px-20 py-6">
@@ -64,14 +67,10 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8">
           {menus.map((item) => (
             <li key={item.path}>
-              <Link
+              <a
                 href={`#${item.path}`}
                 onClick={() => handleMenuClick(item.path)}
-                className={`relative group pb-2 transition-colors ${
-                  activeMenu === item.path
-                    ? "text-primary"
-                    : "text-gray-300 hover:text-primary"
-                }`}
+                className={menuClass(item.path)}
               >
                 {item.name}
 
@@ -82,7 +81,7 @@ export default function Navbar() {
                       : "w-0 group-hover:w-full"
                   }`}
                 />
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -103,18 +102,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-0 top-[70px] h-screen bg-gray-900 z-40 md:hidden">
-          <ul className="flex flex-col items-center justify-center gap-8 pt-6">
+        <div className="fixed inset-0 top-[88px] bg-gray-900 md:hidden">
+          <ul className="flex h-full flex-col items-center justify-center gap-8">
             {menus.map((item) => (
               <li key={item.path}>
-                <Link
+                <a
                   href={`#${item.path}`}
                   onClick={() => handleMenuClick(item.path)}
-                  className={`relative group pb-2 text-xl ${
-                    activeMenu === item.path
-                      ? "text-primary"
-                      : "text-gray-300 hover:text-primary"
-                  }`}
+                  className={`${menuClass(item.path)} text-lg`}
                 >
                   {item.name}
 
@@ -125,7 +120,7 @@ export default function Navbar() {
                         : "w-0 group-hover:w-full"
                     }`}
                   />
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

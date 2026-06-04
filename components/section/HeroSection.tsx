@@ -12,7 +12,7 @@ export default function HeroSection() {
       id="home"
     >
       {/* left side */}
-      <div className="flex flex-col gap-4" data-aos="fade-right">
+      <div  className="flex flex-col gap-4 w-full items-center md:items-start" data-aos="fade-right">
         <div className="flex flex-col gap-2">
           <h1 className="text-gray-400">Hi I am</h1>
           <h1 className="text-xl font-bold text-gray-400">Than Channa</h1>
