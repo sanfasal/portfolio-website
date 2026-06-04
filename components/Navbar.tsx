@@ -73,7 +73,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-0 top-[88px] bg-gray-900 md:hidden">
+        <div className="fixed inset-0 top-[70px] bg-gray-900 md:hidden">
           <ul className="flex flex-col items-center gap-8 pt-10">
             {menus.map((item) => (
               <li key={item.path}>
