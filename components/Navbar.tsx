@@ -102,8 +102,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-0 top-[88px] bg-gray-900 md:hidden">
-          <ul className="flex h-full flex-col items-center justify-center gap-8">
+        <div className="fixed inset-0 top-[70px] bg-gray-900 md:hidden">
+          <ul className="flex pt-6 flex-col items-center justify-center gap-4">
             {menus.map((item) => (
               <li key={item.path}>
                 <a
