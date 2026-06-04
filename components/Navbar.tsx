@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import Button from "./Button";
 
@@ -16,6 +16,36 @@ const menus = [
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
+
+  // Detect active section while scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150;
+
+      menus.forEach((menu) => {
+        const section = document.getElementById(menu.path);
+
+        if (!section) return;
+
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          setActiveMenu(menu.path);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Run once on page load
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMenuClick = (path: string) => {
     setActiveMenu(path);
@@ -65,7 +95,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-3xl cursor-pointer"
+          className="md:hidden text-3xl"
         >
           {isOpen ? <HiX /> : <HiMenu />}
         </button>
@@ -73,14 +103,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-0 top-[70px] bg-gray-900 md:hidden">
-          <ul className="flex flex-col items-center gap-8 pt-10">
+        <div className="fixed inset-0 top-[70px] h-screen bg-gray-900 z-40 md:hidden">
+          <ul className="flex flex-col items-center justify-center gap-8 pt-6">
             {menus.map((item) => (
               <li key={item.path}>
                 <Link
                   href={`#${item.path}`}
                   onClick={() => handleMenuClick(item.path)}
-                  className={`relative group pb-2 text-lg ${
+                  className={`relative group pb-2 text-xl ${
                     activeMenu === item.path
                       ? "text-primary"
                       : "text-gray-300 hover:text-primary"
