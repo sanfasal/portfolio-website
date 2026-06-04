@@ -78,10 +78,13 @@ export const servicesData = [
 ];
 
 export const skillsData = [
-  { name: "HTML5", percent: 95 },
-  { name: "CSS", percent: 90 },
-  { name: "JavaScript", percent: 90 },
-  { name: "Python", percent: 85 },
-  { name: "Next.js", percent: 70 },
-  { name: "Tailwind CSS", percent: 80 },
+  { name: "HTML5", percent: 95, color: "from-orange-500 to-orange-400" },
+  { name: "CSS3", percent: 90, color: "from-blue-500 to-blue-400" },
+  { name: "JavaScript", percent: 90, color: "from-yellow-400 to-yellow-300" },
+  { name: "TypeScript", percent: 80, color: "from-blue-400 to-cyan-400" },
+  { name: "React", percent: 85, color: "from-cyan-400 to-cyan-300" },
+  { name: "Next.js", percent: 75, color: "from-indigo-500 to-indigo-400" },
+  { name: "Tailwind CSS", percent: 85, color: "from-teal-500 to-teal-400" },
+  { name: "Python", percent: 85, color: "from-green-500 to-green-400" },
+  { name: "PostgreSQL", percent: 70, color: "from-sky-500 to-sky-400" },
 ];

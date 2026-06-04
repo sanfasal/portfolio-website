@@ -50,13 +50,11 @@ export default function Navbar() {
 
   const menuClass = (path: string) =>
     `relative inline-block group pb-2 transition-colors ${
-      activeMenu === path
-        ? "text-primary"
-        : "text-gray-300 hover:text-primary"
+      activeMenu === path ? "text-primary" : "text-gray-300 hover:text-primary"
     }`;
 
   return (
-    <nav className="sticky top-0 z-50 bg-black/95 text-white px-6 md:px-20 py-6">
+    <nav className="sticky top-0 z-50 bg-black/95 text-white px-6 md:px-20 py-5">
       <div className="flex items-center justify-between" data-aos="fade-down">
         {/* Logo */}
         <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent">
@@ -75,7 +73,7 @@ export default function Navbar() {
                 {item.name}
 
                 <span
-                  className={`absolute left-0 bottom-0 h-[2px] bg-primary transition-all duration-300 ${
+                  className={`absolute left-0 bottom-0 h-0.5 bg-primary transition-all duration-300 ${
                     activeMenu === item.path
                       ? "w-full"
                       : "w-0 group-hover:w-full"
@@ -114,7 +112,7 @@ export default function Navbar() {
                   {item.name}
 
                   <span
-                    className={`absolute left-0 bottom-0 h-[2px] bg-primary transition-all duration-300 ${
+                    className={`absolute left-0 bottom-0 h-0.5 bg-primary transition-all duration-300 ${
                       activeMenu === item.path
                         ? "w-full"
                         : "w-0 group-hover:w-full"
