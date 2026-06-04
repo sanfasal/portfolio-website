@@ -7,7 +7,7 @@ type Props = {
 export default function Button({ title }: Props) {
   return (
     <button
-      className="bg-primary px-6 py-2 rounded-full hover:scale-105 shadow-lg duration-300 cursor-pointer
+      className="bg-primary px-6 py-2 rounded-4xl hover:scale-105 shadow-lg duration-300 cursor-pointer
       "
     >
       {title}

@@ -2,19 +2,19 @@ import { skillsData } from "@/static-data/data";
 
 export default function Skills() {
   return (
-    <section className=" text-white py-24" id="skills">
+    <section className=" text-white py-24" id="skill">
       <div className="w-full px-6 flex flex-col gap-4 ">
         {/* Header */}
         <div className="flex flex-col items-center gap-4">
-          <h1
+          <h2
             className="text-3xl md:text-5xl font-bold text-center"
             data-aos="zoom-in-up"
           >
             Skills & Technologies
-          </h1>
+          </h2>
 
           <p
-            className="text-md md:text-lg text-gray-500 text-center max-w-2xl"
+            className="text-base md:text-lg text-gray-500 text-center max-w-2xl"
             data-aos="zoom-in-up"
           >
             Creating modern, scalable, and responsive web applications with

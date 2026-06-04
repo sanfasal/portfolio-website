@@ -22,7 +22,7 @@ export default function ServiceCard({
 
       <h3 className="text-2xl font-semibold text-primary mb-4">{title}</h3>
 
-      <p className="text-gray-400 leading-8 text-md md:text-lg">
+      <p className="text-gray-400 leading-8 text-base md:text-lg">
         {description}
       </p>
     </div>

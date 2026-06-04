@@ -11,7 +11,7 @@ export default function ContactSection() {
             Contact me
           </h2>
 
-          <p className="text-gray-500 text-md md:text-lg" data-aos="zoom-in-up">
+          <p className="text-gray-500 text-base md:text-lg" data-aos="zoom-in-up">
             Cultivating Connections: Reach Out And Connect With Me
           </p>
         </div>
