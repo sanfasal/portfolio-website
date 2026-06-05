@@ -10,6 +10,7 @@ import {
   FaDatabase,
   FaTools,
 } from "react-icons/fa";
+import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
 export const socialLinksData = [
   {
@@ -77,11 +78,36 @@ export const servicesData = [
   },
 ];
 
+export const highlightsData = [
+  { label: "Name", value: "Than Channa" },
+  { label: "Role", value: "Full-Stack Developer" },
+  { label: "Location", value: "Phnom Penh, Cambodia" },
+  { label: "Email", value: "thanchanna2026@gmail.com" },
+];
+
 export const skillsData = [
-  { name: "HTML5", percent: 95 },
-  { name: "CSS", percent: 90 },
-  { name: "JavaScript", percent: 90 },
-  { name: "Python", percent: 85 },
-  { name: "Next.js", percent: 70 },
-  { name: "Tailwind CSS", percent: 80 },
+  { name: "HTML5", percent: 95, color: "from-orange-500 to-orange-400" },
+  { name: "CSS", percent: 90, color: "from-blue-500 to-blue-400" },
+  { name: "JavaScript", percent: 90, color: "from-yellow-400 to-yellow-300" },
+  { name: "Next.js", percent: 75, color: "from-indigo-500 to-indigo-400" },
+  { name: "Tailwind CSS", percent: 85, color: "from-teal-500 to-teal-400" },
+  { name: "Python", percent: 85, color: "from-green-500 to-green-400" },
+];
+
+export const contactInfoData = [
+  {
+    icon: MdEmail,
+    label: "Email",
+    value: "thanchanna2026@gmail.com",
+  },
+  {
+    icon: MdPhone,
+    label: "Phone",
+    value: "+855 12 345 678",
+  },
+  {
+    icon: MdLocationOn,
+    label: "Location",
+    value: "Phnom Penh, Cambodia",
+  },
 ];
